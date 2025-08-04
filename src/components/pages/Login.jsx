@@ -1,16 +1,27 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-export default function LoginPage() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: ''
-  });
+"use client"
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
+export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate()
+
+  
+  const handleLogin = async (e) => {
+   e.preventDefault()
+   if(!email || !password) {
+    setError("Please enter email and password")
+    return
+   }
+
+   setIsLoading(true)
+   setError("")
+// at to add await from firebase
   };
 
   const handleSubmit = (e) => {
