@@ -13,13 +13,12 @@ export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
-  // ✅ handleSubmit wrapper for form
   const handleSubmit = (e) => {
-    e.preventDefault();  // prevent page reload
-    handleLogin();       // call login logic
+    e.preventDefault();  
+    handleLogin();       
   };
 
-  // ✅ login logic
+  //  login logic
   const handleLogin = async () => {
     if (!email || !password) {
       setError("Please enter email and password");
@@ -31,7 +30,7 @@ export default function Login() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard"); // redirect on success
+      navigate("/dashboard"); 
     } catch (err) {
       setError("Invalid credentials");
     } finally {
@@ -52,14 +51,14 @@ export default function Login() {
         <div className="bg-black border border-gray-800 rounded-2xl p-8 shadow-xl">
           {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
-          {/* ✅ Form starts here */}
+          {/* Form starts here */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="email"
               name="email"
               placeholder="Email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}   // ✅ fixed
+              onChange={(e) => setEmail(e.target.value)} 
               className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
               required
             />
@@ -69,12 +68,11 @@ export default function Login() {
               name="password"
               placeholder="Password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)} // ✅ fixed
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full px-4 py-3 bg-black border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
               required
             />
 
-            {/* ✅ Submit button inside form */}
             <button
               type="submit"
               disabled={isLoading}
