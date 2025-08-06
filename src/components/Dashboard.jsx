@@ -7,6 +7,7 @@ import { Button  } from './ui/button';
 function Dashboard() {
   return (
     <>
+    
     <Header />
       <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-6">
