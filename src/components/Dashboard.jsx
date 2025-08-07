@@ -13,15 +13,14 @@ function Dashboard() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-6">
           {/* Sidebar */}
 
-          <aside className="md:col-span-1 border-r p-4">
+          <aside className="md:col-span-1 p-4">
             <Sidebar>
-              <p>Extra content passed as children!</p>
-              <Button className="mt-2 w-full">Tweet</Button>
+              <Button className="mt-2 w-full">Post</Button>
             </Sidebar>
           </aside>
 
           {/* Feed */}
-          <main className="md:col-span-4 border-x p-4">
+          <main className="md:col-span-4 p-4">
             {/* <Feed /> */}
             <TweetComposer />
           </main>
