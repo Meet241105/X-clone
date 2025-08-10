@@ -1,37 +1,33 @@
-import React from 'react'
-import Header from './Header';
-import Sidebar from './Sidebar';
-import TweetComposer from './TweetComposer';
-import { Button  } from './ui/button';
+import React from "react";
+import Header from "./Header";
+import Sidebar from "./Sidebar";
+import TweetComposer from "./TweetComposer";
 
 function Dashboard() {
   return (
     <>
-    
-    <Header />
+      <Header />
       <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-6">
+        <div className="mx-auto flex max-w-7xl">
           {/* Sidebar */}
-
-          <aside className="md:col-span-1 p-4">
-            <Sidebar>
-              <Button className="mt-2 w-full">Post</Button>
-            </Sidebar>
+          <aside className="hidden lg:block w-[275px] border-r">
+            <Sidebar />
           </aside>
 
           {/* Feed */}
-          <main className="md:col-span-4 p-4">
+          <main className="flex-1 min-w-0 border-r">
             {/* <Feed /> */}
             <TweetComposer />
           </main>
 
-          <aside className="hidden md:block md:col-span-1 p-4">
+          {/* Right column */}
+          <aside className="hidden xl:block w-[350px] p-4">
             <p className="text-sm text-gray-500">Right Column Placeholder</p>
           </aside>
         </div>
       </div>
-</>
-  )
+    </>
+  );
 }
 
-export default Dashboard
+export default Dashboard;
