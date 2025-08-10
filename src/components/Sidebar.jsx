@@ -10,18 +10,18 @@ import {
   Zap,
   User,
   CircleEllipsis,
-  BrainCircuit,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import XLogo from "./icons/XLogo";
+import Grok from "./icons/Grok"; 
 
 const navItems = [
   { icon: Home, label: "Home" },
   { icon: Search, label: "Explore" },
   { icon: Bell, label: "Notifications" },
   { icon: Mail, label: "Messages" },
-  { icon: BrainCircuit, label: "Grok" },
+  { icon: Grok, label: "Grok" },
   { icon: Bookmark, label: "Bookmarks" },
   { icon: BriefcaseBusiness, label: "Jobs" },
   { icon: Users, label: "Communities" },
