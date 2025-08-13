@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
-import TweetComposer from "./TweetComposer";
+import Header from "@/components/Header";
+import Sidebar from "@/components/Sidebar";
+import Feed from "@/components/Feed"; // contains FeedHeader + TweetComposer
 
 function Dashboard() {
   return (
@@ -16,8 +16,7 @@ function Dashboard() {
 
           {/* Feed */}
           <main className="flex-1 min-w-0 border-r">
-            {/* <Feed /> */}
-            <TweetComposer />
+            <Feed />
           </main>
 
           {/* Right column */}
