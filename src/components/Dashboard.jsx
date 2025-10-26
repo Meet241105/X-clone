@@ -1,32 +1,30 @@
 import React from "react";
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
-import Feed from "@/components/Feed"; // contains FeedHeader + TweetComposer
+import Feed from "@/components/Feed";
+import RightSidebar from "./RightSidebar";
 
-function Dashboard() {
+export default function Dashboard() {
   return (
-    <>
+    <div className="h-screen flex flex-col bg-white dark:bg-black text-black dark:text-white overflow-hidden">
+      {/* Header */}
       <Header />
-      <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white">
-        <div className="mx-auto flex max-w-7xl">
-          {/* Sidebar */}
-          <aside className="hidden lg:block w-[275px] border-r">
-            <Sidebar />
-          </aside>
 
-          {/* Feed */}
-          <main className="flex-1 min-w-0 border-r">
+      {/* Main layout */}
+      <div className="flex flex-1 max-w-7xl mx-auto w-full overflow-hidden">
+        {/* Sidebar */}
+        <Sidebar />
+
+        {/* Feed (centered & limited width) */}
+        <main className="flex-1 flex justify-center overflow-y-auto border-r border-gray-200 dark:border-gray-800">
+          <div className="w-full max-w-[600px] min-h-full">
             <Feed />
-          </main>
+          </div>
+        </main>
 
-          {/* Right column */}
-          <aside className="hidden xl:block w-[350px] p-4">
-            <p className="text-sm text-gray-500">Right Column Placeholder</p>
-          </aside>
-        </div>
+        {/* Right Sidebar */}
+        <RightSidebar />
       </div>
-    </>
+    </div>
   );
 }
-
-export default Dashboard;
